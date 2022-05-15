@@ -1,0 +1,29 @@
+python.manage.py shell
+from <app name.models> blog.models import Post
+Post.object.all() ---(check all query set)
+from django.contrib.auth.models import User ------(<quertset:user=''>)
+User.objects.all() ----------(user name show)
+me = Use.objects.get(username='')
+me
+Post.objects.create(author=me,title="title",text="text") ----(create query)
+Post.objects.filter(title__contains="any name")
+
+Assending order
+Post.objects.oreder_by('created_date')
+
+Desending order
+Post.objects.oreder_by('-created_date')
+
+
+exit () --------(extit python shell)
+
+
+Assending order python shell code
+Post.objects.filter(publish_date __lte= timezone.now()).order_by('publish_date')
+
+Desending order
+Post.objects.filter(publish_date __lte= timezone.now()).order_by('-publish_date')
+
+
+
+
